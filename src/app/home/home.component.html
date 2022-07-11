@@ -1,0 +1,15 @@
+<div class="container">
+    <br>
+    <h2>My orders</h2>
+    <br>
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let order of orders" (click)="selectedOrder = order">
+            {{order.PurchaseOrderTypeAbbreviation}} - {{order.PurchaseOrderNo }}
+        </li>
+    </ul>
+    <br>
+    <br>
+    <div *ngIf="selectedOrder">
+        <app-details [order]="selectedOrder"></app-details>
+    </div>
+</div>

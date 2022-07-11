@@ -1,0 +1,36 @@
+<div class="container">
+    <br>
+    <h2>My order details</h2>
+    <br>
+    <ul class="list-group">
+        <li class="list-group-item">
+            {{order.PurchaseOrderAddress}}
+        </li>
+        <li class="list-group-item">
+            {{order.PurchaseOrderContactPerson}}
+        </li>
+        <li class="list-group-item">
+            {{order.PurchaseOrderStatus}}
+        </li>
+    </ul>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Product SKU</th>
+            <th scope="col">Quantity Ordered</th>
+            <th scope="col">Unit Price</th>
+            <th scope="col">Total Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let detail of order.PurchaseOrderDetails;let i = index;">
+            <th scope="row">{{i}}</th>
+            <td>{{detail.PurchaseOrderRowProductSKU}}</td>
+            <td>{{detail.PurchaseOrderRowQuantity}}</td>
+            <td>{{detail.PurchaseOrderRowUnitPriceWithoutTaxOrDiscount}}</td>
+            <td>{{detail.PurchaseOrderRowTotalAmount}}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
